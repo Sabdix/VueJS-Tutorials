@@ -2,6 +2,7 @@ new Vue({
         el: '#exercise',
         data: {
             value: 0,
+            time: 0,
         },
         computed: {
             result: function(){
@@ -13,7 +14,7 @@ new Vue({
                 var vm = this;
                 setTimeout(function() {
                     vm.value = 0;
-                }, 5000);
+                }, this.time * 1000);
             }
         }
     });
