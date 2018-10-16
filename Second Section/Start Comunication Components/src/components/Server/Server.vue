@@ -1,7 +1,7 @@
 <template>
-    <div @click="showStatus">
+    <li @click="showStatus" class="list-group-item">
         Server #{{ server.id }}
-    </div>
+    </li>
 </template>
 
 <script>
@@ -12,7 +12,7 @@
         },
         methods: {
             showStatus() {
-                eventBus.$emit('showStatus', this.server.status);
+                eventBus.$emit('showStatus', this.server);
             }
         }
     }

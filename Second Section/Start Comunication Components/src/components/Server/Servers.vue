@@ -1,9 +1,7 @@
 <template>
     <div class="col-xs-12 col-sm-6">
-        <ul class="list-group">
-             <li class="list-group-item" v-for="(server, index) in servers" v-bind:key="index">
-                <app-server :server="server"></app-server>
-            </li>
+        <ul class="list-group"> 
+            <app-server v-for="(server, index) in servers" v-bind:key="index" :server="server"></app-server>
         </ul>
     </div>
 </template>
