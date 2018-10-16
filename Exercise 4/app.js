@@ -1,15 +1,38 @@
 new Vue({
   el: '#exercise',
   data: {
-    ex1Val : true,
-    chClass: '',
+    effectClasses: {
+      highlight: false,
+      shrink: true,
+    },
+    blue: 'blue',
+    userClass: '',
+    isVisible: true,
+    myStyle: {
+      width: '100px',
+      height: '100px',
+      backgroundColor: ''
+    },
+    progressBar: {
+      width: '0px',
+      backgroundColor: 'red'
+    }
   },
   methods: {
     startEffect: function() {
-      this.ex1Val = !this.ex1Val;
+      var vm = this;
+      setInterval(function() {
+        vm.effectClasses.highlight = !vm.effectClasses.highlight;
+        vm.effectClasses.shrink = !vm.effectClasses.shrink;
+      }, 1000);
     },
     startProgress: function () {
-
+      var width = 0;
+      var vm = this;
+      setInterval(function() {
+        width += 10;
+        vm.progressBar.width = width + 'px'; 
+      }, 500);
     }
   }
 });

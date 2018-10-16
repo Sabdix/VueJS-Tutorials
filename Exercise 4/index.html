@@ -4,30 +4,30 @@
   <!-- 1) Start the Effect with the Button. The Effect should alternate the "highlight" or "shrink" class on each new setInterval tick (attach respective class to the div with id "effect" below) -->
   <div>
     <button @click="startEffect()">Start Effect</button>
-    <div :class="{highlight: ex1Val, shrink: !ex1Val}" id="effect"></div>
+    <div :class="effectClasses" id="effect"></div>
   </div>
   <!-- 2) Create a couple of CSS classes and attach them via the array syntax -->
-  <div :class="{arrayClass1: true, arrayClass2: true}">I got no class :(</div>
+  <div :class="[blue, 'float', 'text-color']">I got no class :(</div>
   <!-- 3) Let the user enter a class (create some example classes) and attach it -->
   <div>
-    <input @keydown.enter="chClass = $event.target.value" type="text">
-    <div :class="chClass"></div>
+    <input v-model="userClass" type="text">
+    <div :class="[{visible: true}, userClass]"></div>
   </div>
   <!-- 4) Let the user enter a class and enter true/ false for another class (create some example classes) and attach the classes -->
   <div>
-    <input type="text">
-    <input type="text">
-    <div></div>
+    <input v-model="userClass"  type="text">
+    <input v-model="isVisible" type="text">
+    <div :class="[{visible: isVisible}, userClass]"></div>
   </div>
   <!-- 5) Repeat 3) but now with values for styles (instead of class names). Attach the respective styles.  -->
   <div>
-    <input type="text">
-    <div></div>
+    <input v-model='myStyle.backgroundColor' type="text">
+    <div :style="myStyle"></div>
   </div>
   <!-- 6) Create a simple progress bar with setInterval and style bindings. Start it by hitting the below button. -->
   <div>
     <button @click="startProgress">Start Progress</button>
-    <div></div>
+    <div :class="['progressBar']" :style="progressBar"></div>
   </div>
 </div>
 <script src="app.js"></script>
