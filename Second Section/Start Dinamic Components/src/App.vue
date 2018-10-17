@@ -16,22 +16,22 @@
 </template>
 
 <script>
-    import Blue from './components/Blue.vue';
-    import Green from './components/Green.vue';
-    import Red from './components/Red.vue';
+import Blue from "./components/Blue.vue";
+import Green from "./components/Green.vue";
+import Red from "./components/Red.vue";
 
-    export default {
-        data: function() {
-            return {
-                componentId: 'app-blue'
-            }
-        },
-        components: {
-            appBlue: Blue,
-            appGreen: Green,
-            appRed: Red
-        }
-    }
+export default {
+  data: function() {
+    return {
+      componentId: "app-blue"
+    };
+  },
+  components: {
+    appBlue: Blue,
+    appGreen: Green,
+    appRed: Red
+  }
+};
 </script>
 
 <style>
